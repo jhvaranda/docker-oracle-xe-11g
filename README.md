@@ -1,13 +1,9 @@
 docker-oracle-xe-11g
 ============================
 
+Run with 22 1521 8080 ports opened:
 ```
-docker pull wnameless/oracle-xe-11g
-```
-
-Run with 22 and 1521 ports opened:
-```
-docker run -d -p 49160:22 -p 49161:1521 wnameless/oracle-xe-11g
+docker run -d -p 49160:22 -p 49161:1521 -p 49162:8080 prodasen/oracle:xe-11.2.0-1.0
 ```
 
 Connect database with following setting:
@@ -27,5 +23,5 @@ oracle
 Login by SSH
 ```
 ssh root@localhost -p 49160
-password: admin
+password: prodasen
 ```
