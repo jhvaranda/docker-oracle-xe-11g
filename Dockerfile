@@ -2,9 +2,6 @@ FROM prodasen/ubuntu:trusty
 
 MAINTAINER Jose Henrique <jhvaranda@gmail.com>
 
-ENV http_proxy http://jvaranda:j2ee280@av-web.senado.gov.br:80
-ENV https_proxy http://jvaranda:j2ee280@av-web.senado.gov.br:80
-
 ADD chkconfig /sbin/chkconfig
 ADD init.ora /
 ADD initXETemp.ora /
@@ -46,5 +43,5 @@ CMD sed -i -E "s/HOST = [^)]+/HOST = $HOSTNAME/g" /u01/app/oracle/product/11.2.0
 	service oracle-xe start; \
 	/usr/sbin/sshd -D
 
-ENV http_proxy http://user:pass@av-web.senado.gov.br:80
-ENV https_proxy http://user:pass@av-web.senado.gov.br:80
+
+
